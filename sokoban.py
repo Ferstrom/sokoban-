@@ -62,7 +62,7 @@ class Sokoban:
             self.mapa[self.muneco_fila][self.muneco_columna] = 3
             self.mapa[self.muneco_fila][self.muneco_columna + 1] = 2
             self.muneco_columna += 1
-
+        #
         elif self.mapa[self.muneco_fila][self.muneco_columna] == 2 and self.mapa[self.muneco_fila][self.muneco_columna + 1] == 0 and self.mapa[self.muneco_fila][self.muneco_columna + 2] == 3:
             self.mapa[self.muneco_fila][self.muneco_columna] = 3
             self.mapa[self.muneco_fila][self.muneco_columna + 1] = 2
@@ -124,8 +124,16 @@ class Sokoban:
         elif self.mapa[self.muneco_fila][self.muneco_columna] == 2 and self.mapa[self.muneco_fila - 1][self.muneco_columna] == 4:
             self.mapa[self.muneco_fila][self.muneco_columna] = 3
             self.mapa[self.muneco_fila - 1][self.muneco_columna] = 5
-            
-            
+            self.muneco_fila -= 1
+
+        elif self.mapa[self.muneco_fila][self.muneco_columna] == 5 and self.mapa[self.muneco_fila - 1][self.muneco_columna] == 4:
+            self.mapa[self.muneco_fila][self.muneco_columna] = 4
+            self.mapa[self.muneco_fila - 1][self.muneco_columna] = 5
+            self.muneco_fila -= 1
+
+        elif self.mapa[self.muneco_fila][self.muneco_columna] == 5 and self.mapa[self.muneco_fila - 1][self.muneco_columna] == 3:
+            self.mapa[self.muneco_fila][self.muneco_columna] = 4
+            self.mapa[self.muneco_fila - 1][self.muneco_columna] = 2
             self.muneco_fila -= 1
             
     def jugar(self):
