@@ -37,8 +37,8 @@ class Sokoban:
     mapa = [
         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
         [1,3,3,3,3,3,3,3,3,3,3,3,3,3,1],
-        [1,3,3,3,3,2,3,3,3,3,3,3,3,3,1],
-        [1,3,3,3,3,4,4,0,3,3,3,3,3,4,1],
+        [1,3,3,3,3,2,3,4,3,3,0,3,3,3,1],
+        [1,3,3,3,3,4,4,0,3,3,4,3,3,4,1],
         [1,3,3,3,3,4,4,0,3,3,3,3,3,4,1],
         [1,3,3,3,4,4,4,0,4,4,3,3,3,4,1],
         [1,3,3,3,3,3,3,3,0,4,4,4,3,3,1],
@@ -216,13 +216,23 @@ class Sokoban:
             self.mapa[self.muneco_fila + 1][self.muneco_columna] = 5
             self.muneco_fila += 1
         #Muñeco,caja,espacio
-        elif self.mapa[self.muneco_fila][self.muneco_columna] == 2 and self.mapa[self.muneco_fila + 1][self.muneco_columna] == 0 and self.mapa[self.muneco_fila][self.muneco_columna + 2] == 3:
+        elif self.mapa[self.muneco_fila][self.muneco_columna] == 2 and self.mapa[self.muneco_fila + 1][self.muneco_columna] == 0 and self.mapa[self.muneco_fila + 2][self.muneco_columna] == 3:
             self.mapa[self.muneco_fila][self.muneco_columna] = 3
             self.mapa[self.muneco_fila + 1][self.muneco_columna] = 2
             self.mapa[self.muneco_fila + 2][self.muneco_columna] = 0
             self.muneco_fila += 1
-    
-        
+        #Muñeco,caja,meta
+        elif self.mapa[self.muneco_fila][self.muneco_columna] == 2 and self.mapa[self.muneco_fila + 1][self.muneco_columna] == 0 and self.mapa[self.muneco_fila + 2][self.muneco_columna] == 4:
+            self.mapa[self.muneco_fila][self.muneco_columna] = 3
+            self.mapa[self.muneco_fila + 1][self.muneco_columna] = 2
+            self.mapa[self.muneco_fila + 2][self.muneco_columna] = 6
+            self.muneco_fila += 1
+        #Muñeco,caja_meta,espacio
+        elif self.mapa[self.muneco_fila][self.muneco_columna] == 2 and self.mapa[self.muneco_fila + 1][self.muneco_columna] == 6 and self.mapa[self.muneco_fila + 2][self.muneco_columna] == 3:
+            self.mapa[self.muneco_fila][self.muneco_columna] = 3
+            self.mapa[self.muneco_fila + 1][self.muneco_columna] = 5
+            self.mapa[self.muneco_fila + 2][self.muneco_columna] = 0
+            self.muneco_fila += 1
 
     def moverArriba(self):
         print("mover Arriba")
