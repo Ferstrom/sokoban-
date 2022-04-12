@@ -319,7 +319,7 @@ class Sokoban:
         elif self.mapa[self.muneco_fila][self.muneco_columna] == 5 and self.mapa[self.muneco_fila - 1][self.muneco_columna] == 4:
             self.mapa[self.muneco_fila][self.muneco_columna] = 4
             self.mapa[self.muneco_fila - 1][self.muneco_columna] = 5
-            self.muneco_fila -= 1
+            self.muneco_fila = 1
 
        
             
