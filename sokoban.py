@@ -150,6 +150,12 @@ class Sokoban:
             self.mapa[self.muneco_fila][self.muneco_columna - 1] = 2
             self.mapa[self.muneco_fila][self.muneco_columna - 2] = 0
             self.muneco_columna -= 1
+        #Muñeco,caja,meta
+        elif self.mapa[self.muneco_fila][self.muneco_columna] == 2 and self.mapa[self.muneco_fila][self.muneco_columna - 1] == 0 and self.mapa[self.muneco_fila][self.muneco_columna - 2] == 4:
+            self.mapa[self.muneco_fila][self.muneco_columna] = 3
+            self.mapa[self.muneco_fila][self.muneco_columna - 1] = 2
+            self.mapa[self.muneco_fila][self.muneco_columna - 2] = 6
+            self.muneco_columna -= 1
     
         
     def moverAbajo(self):
