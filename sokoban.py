@@ -38,9 +38,9 @@ class Sokoban:
         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
         [1,3,3,1,3,3,3,3,3,3,3,3,3,3,1],
         [1,3,3,1,3,2,3,3,3,3,3,3,3,3,1],
-        [1,3,3,1,3,3,3,0,3,3,3,3,3,4,1],
-        [1,3,3,3,3,3,3,0,3,3,3,3,3,4,1],
-        [1,3,3,3,3,3,3,0,4,4,3,3,3,4,1],
+        [1,3,3,1,3,3,4,0,3,3,3,3,3,4,1],
+        [1,3,3,3,3,3,4,0,3,3,3,3,3,4,1],
+        [1,3,3,3,3,3,4,0,4,4,3,3,3,4,1],
         [1,3,3,3,3,3,3,4,0,4,4,4,3,3,1],
         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
     ]
@@ -161,6 +161,12 @@ class Sokoban:
             self.mapa[self.muneco_fila][self.muneco_columna] = 3
             self.mapa[self.muneco_fila][self.muneco_columna - 1] = 5
             self.mapa[self.muneco_fila][self.muneco_columna - 2] = 0
+            self.muneco_columna -= 1
+        #Muñeco,caja_meta,meta
+        elif self.mapa[self.muneco_fila][self.muneco_columna] == 2 and self.mapa[self.muneco_fila][self.muneco_columna - 1] == 6 and self.mapa[self.muneco_fila][self.muneco_columna - 2] == 4:
+            self.mapa[self.muneco_fila][self.muneco_columna] = 3
+            self.mapa[self.muneco_fila][self.muneco_columna - 1] = 5
+            self.mapa[self.muneco_fila][self.muneco_columna - 2] = 6
             self.muneco_columna -= 1
     
         
