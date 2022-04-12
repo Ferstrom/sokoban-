@@ -139,22 +139,13 @@ class Sokoban:
             self.mapa[self.muneco_fila][self.muneco_columna] = 3
             self.mapa[self.muneco_fila][self.muneco_columna - 1] = 2
             self.muneco_columna -= 1
-
-        elif self.mapa[self.muneco_fila][self.muneco_columna] == 2 and self.mapa[self.muneco_fila][self.muneco_columna - 1] == 0 and self.mapa[self.muneco_fila][self.muneco_columna - 2] == 3:
+         #Muñeco,meta
+        elif self.mapa[self.muneco_fila][self.muneco_columna] == 2 and self.mapa[self.muneco_fila][self.muneco_columna + 1] == 4:
             self.mapa[self.muneco_fila][self.muneco_columna] = 3
-            self.mapa[self.muneco_fila][self.muneco_columna - 1] = 2
-            self.mapa[self.muneco_fila][self.muneco_columna +- 2] = 0
-            self.muneco_columna -= 1
-
-        elif self.mapa[self.muneco_fila][self.muneco_columna] == 5 and self.mapa[self.muneco_fila][self.muneco_columna - 1] == 0 and self.mapa[self.muneco_fila][self.muneco_columna - 2] == 3:
-            self.mapa[self.muneco_fila][self.muneco_columna] = 4
-            self.mapa[self.muneco_fila][self.muneco_columna - 1] = 2
-            self.mapa[self.muneco_fila][self.muneco_columna +- 2] = 0
-            self.muneco_columna -= 1
-
+            self.mapa[self.muneco_fila][self.muneco_columna + 1] = 5
+            self.muneco_columna += 1
+    
         
-
-            
     def moverAbajo(self):
         print("mover Abajo")
         if self.mapa[self.muneco_fila][self.muneco_columna] == 2 and self.mapa[self.muneco_fila + 1][self.muneco_columna] == 3:
