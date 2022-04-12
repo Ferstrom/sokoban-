@@ -210,7 +210,7 @@ class Sokoban:
             self.mapa[self.muneco_fila][self.muneco_columna] = 3
             self.mapa[self.muneco_fila + 1][self.muneco_columna] = 2
             self.muneco_fila += 1
-        #Meta,personaje
+        #Meta,muñeco
         elif self.mapa[self.muneco_fila][self.muneco_columna] == 2 and self.mapa[self.muneco_fila + 1][self.muneco_columna] == 4:
             self.mapa[self.muneco_fila][self.muneco_columna] = 3
             self.mapa[self.muneco_fila + 1][self.muneco_columna] = 5
@@ -220,7 +220,7 @@ class Sokoban:
             self.mapa[self.muneco_fila][self.muneco_columna] = 3
             self.mapa[self.muneco_fila + 1][self.muneco_columna] = 2
             self.mapa[self.muneco_fila + 2][self.muneco_columna] = 0
-            self.muneco_fila += 1
+            self.muneco_fila -= 1
     
         
 
